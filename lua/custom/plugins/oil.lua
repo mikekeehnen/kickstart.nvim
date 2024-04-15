@@ -4,7 +4,11 @@ return {
     opts = {},
     config = function()
       local oil = require("oil")
-      oil.setup()
+      oil.setup({
+        view_options = {
+          show_hidden = true,
+        }
+      })
       vim.keymap.set("n", "<leader>`", function()
         oil.toggle_float()
       end, { desc = "Open parent directory" })
